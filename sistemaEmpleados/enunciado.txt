@@ -1,0 +1,16 @@
+Sistema de Empleados
+Crea una clase base Empleado y dos subclases: Gerente y Desarrollador.
+
+Empleado: nombre, sueldo
+Método calcular_bono() → devuelve 10% del sueldo
+
+Gerente: bono del 20%
+Desarrollador: bono del 15%
+
+Usa super() para no repetir código
+Agrega __str__() para que al imprimir un empleado diga: "Empleado: <nombre>, Sueldo: <sueldo>"
+
+Prueba:
+Crea varios empleados de distintas clases
+Imprime el bono de cada uno
+Usa una función común mostrar_info(emp) que acepte cualquier tipo de empleado y use polimorfismo
