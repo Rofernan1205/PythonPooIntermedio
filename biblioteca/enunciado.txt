@@ -1,0 +1,13 @@
+Biblioteca con libros
+Enunciado:
+Crea una clase Libro con atributos titulo, autor, anio, y una clase Biblioteca que almacene libros.
+
+Métodos en Biblioteca:
+
+agregar_libro()
+buscar_por_autor()
+mostrar_libros()
+Usa __repr__ en Libro para mostrar bien al imprimir la lista.
+
+Prueba:
+Agrega varios libros a una biblioteca y busca libros por autor.
