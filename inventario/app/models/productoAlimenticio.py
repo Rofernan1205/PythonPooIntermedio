@@ -1,10 +1,25 @@
 from ..models.producto import Producto
+import datetime
+
+fecha_actual = datetime.datetime.now().date()
 
 
 class ProductoAlimenticio(Producto):
     def __init__(self, id, nombre, precio, stock, fecha_caducidad):
         super().__init__(id, nombre, precio, stock)
-        self.fecha_caducidad = fecha_caducidad
+        self._fecha_caducidad = fecha_caducidad
+
+    @property
+    def fecha_caducidad(self):
+        return self._fecha_caducidad
+
+    @fecha_caducidad.setter
+    def fecha_caducidad(self, fecha):
+        if fecha > fecha_actual:
+            self._fecha_caducidad = fecha
+        else:
+            raise ValueError("Producto vencido")
+
 
     def to_dict(self):
         return {
