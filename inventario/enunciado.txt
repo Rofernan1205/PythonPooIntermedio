@@ -1,0 +1,25 @@
+Inventario con Herencia
+Clase base: Producto
+Atributos: id, nombre, precio, stock
+Métodos:
+to_dict() → retorna diccionario
+@classmethod from_dict(cls, data) → crea objeto desde dict
+__str__() → formato: "Producto: <nombre>, Precio: <precio>, Stock: <stock>"
+
+Subclases:
+ProductoElectronico → añade garantia_meses (int)
+ProductoAlimenticio → añade fecha_caducidad (str)
+Cada subclase:
+Llama a super().__init__ para inicializar atributos de la clase base.
+Sobrescribe to_dict() para incluir sus atributos extra.
+Sobrescribe from_dict() para reconstruirse con sus datos extra.
+Cambia __str__() para mostrar los atributos extra.
+
+Clase Gestora: Inventario
+Atributo: productos (lista de objetos, no diccionarios)
+Métodos:
+
+agregar_producto(producto_obj)
+guardar_en_json(nombre_archivo) → convierte todos a diccionarios y guarda
+cargar_desde_json(nombre_archivo) → lee y reconstruye cada producto según su tipo (tipo en el dict)
+listar_productos() → imprime todos con __str__()
