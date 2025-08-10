@@ -1,10 +1,10 @@
 from ..models.producto import Producto
 
+
 class ProductoElectronico(Producto):
     def __init__(self, id, nombre, precio, stock, garantia_meses):
         super().__init__(id, nombre, precio, stock)
         self._garantia_meses = garantia_meses
-
 
     @property
     def garantia_meses(self):
@@ -17,13 +17,10 @@ class ProductoElectronico(Producto):
         else:
             raise ValueError("Número de meses no puede ser negativo")
 
-
-
     def to_dict(self):
         datos = super().to_dict()
         datos["garantia_meses"] = self.garantia_meses
         return datos
-
 
     @classmethod
     def from_dict(cls, data):

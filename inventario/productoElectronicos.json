@@ -1,0 +1,16 @@
+[
+    {
+        "id": 2,
+        "nombre": "Televisión",
+        "precio": 400,
+        "stock": 5,
+        "garantia_meses": 12
+    },
+    {
+        "id": 5,
+        "nombre": "Celular",
+        "precio": 800,
+        "stock": 12,
+        "garantia_meses": 10
+    }
+]

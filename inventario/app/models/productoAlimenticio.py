@@ -20,7 +20,6 @@ class ProductoAlimenticio(Producto):
         else:
             raise ValueError("Producto vencido")
 
-
     def to_dict(self):
         return {
             "id": self.id,
