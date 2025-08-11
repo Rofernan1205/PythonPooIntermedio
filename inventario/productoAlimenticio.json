@@ -4,20 +4,20 @@
         "nombre": "Arroz",
         "precio": 23,
         "stock": 12,
-        "fecha_caducidad": "12/12/25"
+        "fecha_caducidad": "12/12/2025"
     },
     {
         "id": 3,
         "nombre": "Azúcar",
         "precio": 55,
         "stock": 5,
-        "fecha_caducidad": "12/12/25"
+        "fecha_caducidad": "12/09/2025"
     },
     {
         "id": 4,
         "nombre": "Lenteja",
         "precio": 13,
         "stock": 10,
-        "fecha_caducidad": "12/12/25"
+        "fecha_caducidad": "12/12/2025"
     }
 ]

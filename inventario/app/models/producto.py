@@ -2,8 +2,8 @@ class Producto:
     def __init__(self, id, nombre, precio, stock):
         self.id = id
         self.nombre = nombre
-        self.__precio = precio
-        self.__stock = stock
+        self.precio = precio
+        self.stock = stock
 
     @property
     def precio(self):
@@ -14,7 +14,7 @@ class Producto:
         if precio > 0:
             self.__precio = precio
         else:
-            print("Precio no puede ser negativo")
+            raise ValueError("Precio no puede ser negativo")
 
     @property
     def stock(self):
@@ -25,7 +25,7 @@ class Producto:
         if stock > 0:
             self.__stock = stock
         else:
-            print("Stock no puede ser negativo")
+            raise ValueError("Stock no puede ser negativo")
 
     def to_dict(self):
         return {
@@ -34,6 +34,7 @@ class Producto:
             "precio": self.precio,
             "stock": self.stock
         }
+
     @classmethod
     def from_dict(cls, data):
         return cls(data["id"],
@@ -41,11 +42,8 @@ class Producto:
                    data["precio"],
                    data["stock"])
 
-
     def __string__(self):
         return f"Nombre: {self.nombre}, Precio: {self.precio}. Stock: {self.stock}"
 
     def __repr__(self):
         return f"Producto({self.nombre}, {self.precio}, {self.stock})"
-
-

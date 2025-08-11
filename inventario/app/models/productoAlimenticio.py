@@ -7,7 +7,7 @@ fecha_actual = datetime.datetime.now().date()
 class ProductoAlimenticio(Producto):
     def __init__(self, id, nombre, precio, stock, fecha_caducidad):
         super().__init__(id, nombre, precio, stock)
-        self._fecha_caducidad = fecha_caducidad
+        self.fecha_caducidad = fecha_caducidad
 
     @property
     def fecha_caducidad(self):
@@ -15,8 +15,9 @@ class ProductoAlimenticio(Producto):
 
     @fecha_caducidad.setter
     def fecha_caducidad(self, fecha):
-        if fecha > fecha_actual:
-            self._fecha_caducidad = fecha
+        f_fecha = datetime.datetime.strptime(fecha, "%d/%m/%Y")
+        if f_fecha.date() > fecha_actual:
+            self._fecha_caducidad = f_fecha.date()
         else:
             raise ValueError("Producto vencido")
 
@@ -26,7 +27,7 @@ class ProductoAlimenticio(Producto):
             "nombre": self.nombre,
             "precio": self.precio,
             "stock": self.stock,
-            "fecha_caducidad": self.fecha_caducidad
+            "fecha_caducidad": datetime.datetime.strftime(self.fecha_caducidad,"%d/%m/%Y")
         }
 
     @classmethod

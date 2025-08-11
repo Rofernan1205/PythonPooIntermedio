@@ -4,7 +4,7 @@ from ..models.producto import Producto
 class ProductoElectronico(Producto):
     def __init__(self, id, nombre, precio, stock, garantia_meses):
         super().__init__(id, nombre, precio, stock)
-        self._garantia_meses = garantia_meses
+        self.garantia_meses = garantia_meses
 
     @property
     def garantia_meses(self):
@@ -28,10 +28,12 @@ class ProductoElectronico(Producto):
                    data["nombre"],
                    data["precio"],
                    data["stock"],
-                   data["fecha_caducidad"])
+                   data["garantia_meses"])
 
     def __string__(self):
-        return f"Nombre: {self.nombre}, Precio: {self.precio}. Stock: {self.stock}, Fecha_caducidad: {self.garantia_meses}"
+        return f"Nombre: {self.nombre}, Precio: {self.precio}. Stock: {self.stock}, Garantia_meses: {self.garantia_meses}"
 
     def __repr__(self):
         return f"Producto({self.nombre}, {self.precio}, {self.stock}, {self.garantia_meses})"
+
+

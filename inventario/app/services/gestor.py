@@ -6,7 +6,7 @@ class GestorBase(ABC):
     def __init__(self, archivo):
         self.archivo = archivo
         self.productos = []
-        self.cargar_desde_json()
+
 
     @abstractmethod
     def agregar_producto(self, producto):
