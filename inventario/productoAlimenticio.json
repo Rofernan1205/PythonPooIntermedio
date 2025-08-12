@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "nombre": "Arroz",
+        "nombre": "Trigo",
         "precio": 23,
         "stock": 12,
         "fecha_caducidad": "12/12/2025"

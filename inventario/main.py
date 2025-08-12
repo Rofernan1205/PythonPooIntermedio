@@ -15,17 +15,27 @@ productos = [
     ProductoElectronico(5, "Celular", 800, 12, 10),
 ]
 
-for producto in productos:
-    if isinstance(producto, ProductoAlimenticio):
-        gestorAlimenticios.agregar_producto(producto)
-    elif isinstance(producto, ProductoElectronico):
-        gestorElectronicos.agregar_producto(producto)
+# for producto in productos:
+#     if isinstance(producto, ProductoAlimenticio):
+#         gestorAlimenticios.agregar_producto(producto)
+#     elif isinstance(producto, ProductoElectronico):
+#         gestorElectronicos.agregar_producto(producto)
 
 print("\n Productos Electrónicos:")
 gestorElectronicos.listar_productos()
 
 print("\n Productos Alimenticios:")
 gestorAlimenticios.listar_productos()
+
+# print("\n Productos alimenticio a buscar:")
+# producto = gestorAlimenticios.buscar_producto(1)
+# print(producto)
+
+# print("\n Productos electronico a buscar:")
+# producto = gestorElectronicos.buscar_producto(5)
+# print(producto)
+
+gestorAlimenticios.editar_producto(1, nombre="Trigo", precio = 23, stock = 12, fecha_caducidad="12/12/2025")
 
 
 

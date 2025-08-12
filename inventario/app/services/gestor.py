@@ -2,10 +2,12 @@ import json
 from abc import ABC, abstractmethod
 
 
+
 class GestorBase(ABC):
     def __init__(self, archivo):
         self.archivo = archivo
         self.productos = []
+        self.cargar_desde_json()
 
 
     @abstractmethod
@@ -27,6 +29,20 @@ class GestorBase(ABC):
     def listar_productos(self):
         for producto in self.productos:
             print(producto)
+
+    def buscar_producto(self, id):
+        return next((p for p in self.productos if p.id == id), None)
+
+    def editar_producto(self, id, **kwargs):
+        producto = self.buscar_producto(id)
+        print(producto)
+        if producto:
+            for clave, valor in kwargs.items():
+                if hasattr(producto, clave):
+                    setattr(producto, clave, valor)
+            self.guardar_en_json()
+            return "Producto editado con éxito"
+        return "No existe producto con ese ID"
 
     def eliminar_producto(self, id):
         self.productos = [p for p in self.productos if p.id != id]
